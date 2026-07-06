@@ -1,11 +1,271 @@
+/* Projects.css */
+.projects {
+  padding: 100px 10%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.projects.dark {
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #0f0f1f 100%);
+  color: #ffffff;
+}
+
+.projects.light {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+  color: #1a1a2e;
+}
+
+.projects-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6c63ff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.projects.dark .section-title {
+  color: #ffffff;
+}
+
+.projects.light .section-title {
+  color: #1a1a2e;
+}
+
+.section-line {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #6c63ff, #8b5cf6);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.section-description {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.projects.dark .section-description {
+  color: #cbd5e1;
+}
+
+.projects.light .section-description {
+  color: #475569;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
 .project-card {
-  padding: 20px;
-  border-radius: 10px;
-  background: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.projects.dark .project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.projects.light .project-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+}
+
+.projects.dark .project-card:hover {
+  box-shadow: 0 20px 60px rgba(108, 99, 255, 0.2);
+  border-color: #6c63ff;
+}
+
+.projects.light .project-card:hover {
+  box-shadow: 0 20px 60px rgba(108, 99, 255, 0.1);
+  border-color: #6c63ff;
+}
+
+.project-image {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(139, 92, 246, 0.1));
+}
+
+.project-icon-wrapper {
+  font-size: 64px;
+  color: #6c63ff;
+  animation: float 3s ease-in-out infinite;
+}
+
+.project-tech-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #6c63ff;
+  color: white;
+}
+
+.project-content {
+  padding: 25px;
+}
+
+.project-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.projects.dark .project-content h3 {
+  color: #ffffff;
+}
+
+.projects.light .project-content h3 {
+  color: #1a1a2e;
+}
+
+.project-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.projects.dark .project-content p {
+  color: #cbd5e1;
+}
+
+.projects.light .project-content p {
+  color: #475569;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tech-tag {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.projects.dark .tech-tag {
+  background: rgba(108, 99, 255, 0.2);
+  color: #a78bfa;
+}
+
+.projects.light .tech-tag {
+  background: rgba(108, 99, 255, 0.1);
+  color: #6c63ff;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.project-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.projects.dark .project-links a {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+}
+
+.projects.light .project-links a {
+  background: rgba(0, 0, 0, 0.05);
+  color: #475569;
+}
+
+.project-links a:hover {
+  background: #6c63ff;
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .project-image {
+    height: 150px;
+  }
+
+  .project-icon-wrapper {
+    font-size: 48px;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-links a {
+    justify-content: center;
+  }
 }
